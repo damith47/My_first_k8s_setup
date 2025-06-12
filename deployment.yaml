@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: damith1-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: damith1
+  template:
+    metadata:
+      labels:
+        app: damith1
+    spec:
+      containers:
+      - name: damith1
+        image: damith1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+
